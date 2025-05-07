@@ -17,4 +17,6 @@ router.get("/creds-primary", getPrimaryUserDetails);
 router.post("/details-submit",attachmentsMulter, detailsSubmit); // for updating details
 router.post("/createreq", createreq);
 router.post("/getreqs", getUserRequests);
+
+
 export default router;
