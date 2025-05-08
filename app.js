@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/user.js";
 import cors from "cors";
+import adminRoutes from "./routes/admin.js";
 // Load environment variables
 dotenv.config();
 
@@ -18,7 +19,7 @@ app.use(express.json());
 const connectDB = async () => {
   try {
     await mongoose.connect(MONGO_URI);
-    console.log(MONGO_URI);
+    
     console.log("MongoDB connected successfully");
   } catch (error) {
     console.error("MongoDB connection error:", error);
@@ -29,6 +30,8 @@ const connectDB = async () => {
 connectDB();
 
 app.use("/users", userRoutes);
+
+app.use("/admin", adminRoutes);
 //? Basic route
 app.get("/", (req, res) => {
   res.send("API is running...");
