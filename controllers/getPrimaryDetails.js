@@ -17,7 +17,14 @@ export const getPrimaryUserDetails = async (req, res) => {
     }
 
     //^ Verify & decode the token
+    // let decoded;
+    // try{
+    //   decoded = jwt.verify(token, JWT_SECRET);
+    // }catch (error){
+    //   console.log(error)
+    // }
     const decoded = jwt.verify(token, JWT_SECRET);
+    
     const userId = decoded.userId; // Extracting the user ID from the token
     const email = decoded.email; // Extracting the email from the token
 
@@ -27,11 +34,11 @@ export const getPrimaryUserDetails = async (req, res) => {
     );
 
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "USER NOT FOUND" });
     }
 
     if (user.email !== email) {
-      return res.status(403).json({ message: "Unauthorized access" });
+      return res.status(403).json({ message: "UNAUTHORIZED ACCESS!" });
     }
     res.status(200).json({ user });
   } catch (error) {

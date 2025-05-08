@@ -16,16 +16,19 @@ const academicInfoSchema = new mongoose.Schema({
       title: String,
       type: String,
       mode: String,
-      duration: Number,
-      year: Number,
+      duration: String,
+      year: String,
       graded: Boolean,
       supervisor: String,
       coSupervisor: String,
       institute: String,
       sdgConnection: Boolean,
       outcome: String,
-      certificate:  String ,
-    },
+      certificate:  {
+        type: String,
+        default: null,
+      } ,
+    },  
   ],
   publications: {
     journalPapers: [

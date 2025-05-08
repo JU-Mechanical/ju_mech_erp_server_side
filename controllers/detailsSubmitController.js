@@ -19,7 +19,7 @@ export const detailsSubmit = async (req, res) => {
       miscellaneous,
     } = req.body;
     
-     // console.log(req.files);
+     console.log(typeof req.body.academicInfo.projectDetails); // Debugging: Log the type of req.body
     // console.log("Request Body:", req.body); // Debugging: Log the incoming data
 
     let user = await User.findOne({ email: personalInfo.email });
@@ -37,6 +37,7 @@ export const detailsSubmit = async (req, res) => {
     user.careerProgression = careerProgression || {};
     user.miscellaneous = miscellaneous || {};
 
+    console.log("After",user.academicInfo); // Debugging: Log the academic background
     // // console.log("User object before saving:", user); // Debugging: Log the user object
 
     // // Save the updated user
