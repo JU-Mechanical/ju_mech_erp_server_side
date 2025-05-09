@@ -11,7 +11,7 @@ const JWT_SECRET = process.env.JWT;
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-
+   
     //^ Find the user by email
     const user = await User.findOne({
       email: email,

@@ -20,7 +20,7 @@ export const detailsSubmit = async (req, res) => {
     } = req.body;
     
      // console.log(req.files);
-    // console.log("Request Body:", req.body); // Debugging: Log the incoming data
+     console.log("Request Body:", req.body); // Debugging: Log the incoming data
 
     let user = await User.findOne({ email: personalInfo.email });
 

@@ -11,22 +11,23 @@ const academicInfoSchema = new mongoose.Schema({
   ],
   selectedProfessional: [String],
   selectedOpen: [String],
-  projectDetails: [
-    {
-      title: String,
-      type: String,
-      mode: String,
-      duration: Number,
-      year: Number,
-      graded: Boolean,
-      supervisor: String,
-      coSupervisor: String,
-      institute: String,
-      sdgConnection: Boolean,
-      outcome: String,
-      certificate:  String ,
-    },
-  ],
+  // projectDetails: [
+  //   {
+  //     title: String,
+  //     type: String,
+  //     mode: String,      
+  //     duration: Number,
+  //     year: Number,
+  //     graded: Boolean,
+  //     supervisor: String,
+  //     coSupervisor: String,
+  //     institute: String,
+  //     sdgConnection: Boolean,
+  //     outcome: String,
+  //     certificate:  String ,
+  //     projects:[]
+  //   },
+  // ],
   publications: {
     journalPapers: [
       {
