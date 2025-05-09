@@ -13,7 +13,7 @@ const router = express.Router();
 //? backend routes
 router.post("/login", login); // for user login
 router.post("/signup", signup); // for user signup
-router.get("/creds-primary", getPrimaryUserDetails);
+router.get("/creds-primary", getPrimaryUserDetails); // used to get primary detals for local storage
 router.post("/details-submit",attachmentsMulter, detailsSubmit); // for updating details
 router.post("/createreq", createreq);
 router.post("/getreqs", getUserRequests);

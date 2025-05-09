@@ -37,6 +37,7 @@ export const detailsSubmit = async (req, res) => {
     user.careerProgression = careerProgression || {};
     user.miscellaneous = miscellaneous || {};
 
+    console.log("After",user.academicInfo); // Debugging: Log the academic background
     // // console.log("User object before saving:", user); // Debugging: Log the user object
 
     // // Save the updated user
