@@ -20,7 +20,7 @@ const ExamSchema = new mongoose.Schema({
   hasTraining: Boolean,
   trainingType: String,
   trainingMode: String,
-  resultCard: String,
+  rankCard: String,
 });
 
 const HigherStudySchema = new mongoose.Schema({

@@ -19,8 +19,8 @@ export const detailsSubmit = async (req, res) => {
       miscellaneous,
     } = req.body;
     
-     console.log(typeof req.body.academicInfo.projectDetails); // Debugging: Log the type of req.body
-    // console.log("Request Body:", req.body); // Debugging: Log the incoming data
+     // console.log(req.files);
+     console.log("Request Body:", req.body); // Debugging: Log the incoming data
 
     let user = await User.findOne({ email: personalInfo.email });
 
