@@ -28,6 +28,7 @@ const HigherStudySchema = new mongoose.Schema({
   duration: String,
   university: String,
   country: String,
+  letter:String
 });
 
 const StartupSchema = new mongoose.Schema({
