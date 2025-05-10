@@ -6,28 +6,28 @@ const academicInfoSchema = new mongoose.Schema({
       semester: Number,
       sgpa: String,
       cgpa: String,
-      gradecard:String
+      gradecard: String
     }
   ],
   selectedProfessional: [String],
   selectedOpen: [String],
-  // projectDetails: [
-  //   {
-  //     title: String,
-  //     type: String,
-  //     mode: String,      
-  //     duration: Number,
-  //     year: Number,
-  //     graded: Boolean,
-  //     supervisor: String,
-  //     coSupervisor: String,
-  //     institute: String,
-  //     sdgConnection: Boolean,
-  //     outcome: String,
-  //     certificate:  String ,
-  //     projects:[]
-  //   },
-  // ],
+  projects: [
+    {
+      title: String,
+      typeP: String,
+      mode: String,      
+      duration: String,
+      year: String,
+      graded: String,
+      supervisor: String,
+      coSupervisor: String,
+      institute: String,
+      sdgConnection: String,
+      outcome: String,
+      certificate: String,
+      projects: []
+    },
+  ],
   publications: {
     journalPapers: [
       {
