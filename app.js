@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = 
-  process.env.MONGO_URI || "mongodb://localhost:27017/ju_mech_erp";
+  process.env.MONGO_URI || "mongodb+srv://snowflower701:fCVGSXoU51AlkO6W@cluster0.keeeenm.mongodb.net/";
 app.use(cors());
 // Middleware
 app.use(express.json());

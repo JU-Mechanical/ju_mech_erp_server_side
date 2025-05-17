@@ -20,12 +20,22 @@ export const signup = async (req, res) => {
     }
     //^ Check if the user already exists
     const existingUser = await User.findOne({
-      email: email,
+      $or: [
+        { email: email },
+        { rollNumber: rollNumber }
+      ]
     });
     if (existingUser) {
-      return res
-        .status(400)
-        .json({ success: false, message: "User already exists" });
+      if (existingUser.email === email) {
+        return res
+          .status(400)
+          .json({ success: false, message: "User with this email already exists" });
+      }
+      if (existingUser.rollNumber === rollNumber) {
+        return res
+          .status(400)
+          .json({ success: false, message: "User with this roll number already exists" });
+      }
     }
 
     // Hash the password
