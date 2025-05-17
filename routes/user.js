@@ -18,5 +18,9 @@ router.post("/details-submit",attachmentsMulter, detailsSubmit); // for updating
 router.post("/createreq", createreq);
 router.post("/getreqs", getUserRequests);
 
+//this is a health route to keep the server alive
+router.get("/health", (req, res) => {
+  res.status(200).json({ message: "Server is running" });
+});
 
 export default router;
