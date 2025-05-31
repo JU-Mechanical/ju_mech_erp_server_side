@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRoutes from "./routes/user.js";
 import cors from "cors";
 import adminRoutes from "./routes/admin.js";
+import bcrypt from "bcryptjs";
 // Load environment variables
 dotenv.config();
 
@@ -36,6 +37,11 @@ app.use("/admin", adminRoutes);
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
+
+const passtoJWT=async()=>{
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash("1234", salt);
+}
 
 // Start server
 app.listen(PORT, () => {
