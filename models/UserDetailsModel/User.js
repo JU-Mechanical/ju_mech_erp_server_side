@@ -23,6 +23,8 @@ const userSchema = new mongoose.Schema(
     curricularInfo: CoCurricularSchema,
     careerProgression: careerProgressionSchema,
     miscellaneous: miscellaneousSchema,
+    resetPasswordToken:String,
+    resetPasswordExpires: Date,
   },
   { timestamps: true }
 );
