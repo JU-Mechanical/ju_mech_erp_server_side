@@ -5,6 +5,8 @@ import userRoutes from "./routes/user.js";
 import cors from "cors";
 import adminRoutes from "./routes/admin.js";
 import bcrypt from "bcryptjs";
+import nodeCron from "node-cron";
+import { sendIncompleteUsersReminder } from "./controllers/adminController.js";
 // Load environment variables
 dotenv.config();
 
@@ -36,6 +38,10 @@ app.use("/admin", adminRoutes);
 //? Basic route
 app.get("/", (req, res) => {
   res.send("API is running...");
+});
+
+nodeCron.schedule("0 0 */3 * *", async () => {
+  await sendIncompleteUsersReminder({}, { status: () => {}, json: () => {} });
 });
 
 const passtoJWT=async()=>{
