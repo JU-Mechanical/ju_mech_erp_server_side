@@ -11,7 +11,7 @@ import { sendIncompleteUsersReminder } from "./controllers/adminController.js";
 dotenv.config();
 
 const corsOptions = {
-  origin: "https://ju-mech-erp-client-side-xi.vercel.app/",
+  origin: "https://jumechanical.online/",
   opttionSuccessStatus: 200,
 }
 
