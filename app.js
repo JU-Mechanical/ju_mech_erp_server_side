@@ -11,7 +11,7 @@ import { sendIncompleteUsersReminder } from "./controllers/adminController.js";
 dotenv.config();
 
 const corsOptions = {
-  origin: "https://www.jumechanical.online/",
+  origin: "https://www.jumechanical.online",
   opttionSuccessStatus: 200,
 }
 
