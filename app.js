@@ -10,11 +10,16 @@ import { sendIncompleteUsersReminder } from "./controllers/adminController.js";
 // Load environment variables
 dotenv.config();
 
+const corsOptions = {
+  origin: "https://ju-mech-erp-client-side-xi.vercel.app/",
+  opttionSuccessStatus: 200,
+}
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = 
   process.env.MONGO_URI ;
-app.use(cors());
+app.use(cors(corsOptions));
 // Middleware
 app.use(express.json());
 
